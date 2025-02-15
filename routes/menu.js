@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
     menus.forEach(menu => {
       menu.items = menuItemsMap[menu.id];
     });
-
+    console.log(menus);
     res.status(200).json(menus);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch menus.' });

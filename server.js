@@ -34,7 +34,7 @@ app.get('/manage', (req, res) => {
 });
 
 app.get('/menu', (req, res) => {
-
+  res.sendFile(path.join(__dirname, 'views/menu.html'));
 });
 
 app.get('/stats', (req, res) => {
