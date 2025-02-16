@@ -52,3 +52,17 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });
+
+/*
+TODO: 
+- menu static render
+- fix styling on new order
+- much more efficient image loading in new order
+- quantity set feature - new order
+- detailed view - manage orders
+- manage orders styling upgrade
+- search - manage orders
+- fix styling menu page
+- stats page
+- proper deployment
+*/
