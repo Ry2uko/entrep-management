@@ -110,8 +110,8 @@ main .menu-items-container .menu-item {
 }
 main .menu-items-container .menu-item img.item-img {
   width: 60%;
-  min-width: 232px;
   height: 270px;
+  max-width: 320px;
   object-fit: contain;
 }
 main .menu-items-container .item-details-container {

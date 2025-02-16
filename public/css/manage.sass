@@ -15,6 +15,7 @@ body, html
     width: 100%
     height: 100vh
     overflow-x: hidden
+    overflow-y: auto
     background: $bg-main
     position: relative
 
@@ -106,7 +107,7 @@ a
         padding: 7px 5px
         font-size: 1.1rem
 
-.orders-container
+.main-orders-container
     margin-bottom: 2rem
 
     h3
@@ -114,12 +115,80 @@ a
         font:
             family: $ff-red-hat-display
             size: 1.8rem
+    
+    .orders-container
+        display: none
+
+        .order
+            background-color: #fff
+            border-radius: 0.3rem
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+            font-family: $ff-red-hat-display
+            padding: 20px
+            margin-bottom: 10px
+            border: 2px solid #fff
+            cursor: pointer
+            transition: 0.15s
+
+            &.completed
+                background-color: #87DC78
+                border: 2px solid #147b0d
+
+                .btn-group button.btn-order
+                    display: none
+
+            &.cancelled
+                background-color: #F1A5A5
+                border: 2px solid #BE0F0F
+
+                .btn-group button.btn-order
+                    display: none
+
+            .column
+                display: flex
+                justify-content: center
+                align-items: center
+
+            span
+                text-align: center
+                font-size: 1.5rem
+
+                &.order-id
+                    font-weight: 600
+
+                &.checkmark
+                    color: #0e7b15
+                    font-size: 2rem
+
+            .btn-group
+                button.btn-order
+                    font-size: 1.6rem
+                    padding: 3px 15px
+                    border-radius: 0.4rem
+                    cursor: ponter
+                    margin: 0 5px
+                    transition: 0.15s ease-out
+
+                    &.cancel-order
+                        background-color: #dc191963
+                        color: #be0f0f
+                        border: 1px solid #F1A5A5
+
+                        &:hover
+                            border: 1px solid #be0f0f
+
+                    &.complete-order
+                        background-color: #2be72164
+                        color: #126a0f
+                        border: 1px solid #ABF6A8
+
+                        &:hover
+                            border: 1px solid #126a0f
 
 .loader 
-    width: 35px
-    height: 80px
+    width: 30px
+    height: 60px
     position: relative
-    display: none
 
 .loader:after 
     content: ""

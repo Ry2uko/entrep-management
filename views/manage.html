@@ -17,7 +17,7 @@
         <script defer type="text/javascript" src="/public/js/manage.js"></script>
     </head>
     <body>
-        <div class="parent-container container-fluid">
+        <div class="parent-container container-fluid d-flex flex-column">
             <header class="header container-fluid d-flex p-2">
                 <h1 class="navbar-logo">
                     <a href="/"><img src="/public/img/Logo.png" alt="logo" class="logo h-100" /></a>
@@ -46,7 +46,6 @@
                     </div>
                 </nav>
             </header>
-            <div class="loader mx-auto mt-5"></div>
             <main class="container-fluid">
                 <div class="container-fluid title-container mb-5"> 
                     <img src="/public/img/manage-orders-title.png" alt="page-title" 
@@ -66,12 +65,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="pending-orders-container container-md orders-container"> 
+                <div class="pending-orders-container container-md main-orders-container"> 
                     <h3>Pending</h3>
-                    <div class="orders-container container-fluid"></div>
+                    <div class="loader mx-auto mt-5"></div>
+                    <div class="orders-container container-fluid flex-column">
+                    </div>
                 </div>
-                <div class="completed-orders-container container-md orders-container">
+                <div class="completed-orders-container container-md main-orders-container">
                     <h3>Completed</h3>
+                    <div class="loader mx-auto mt-5"></div>
+                    <div class="orders-container container-fluid flex-column"></div>
                 </div>
             </main>
         </div>

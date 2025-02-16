@@ -1,18 +1,45 @@
 const db = require('../db')
 const router = require('express').Router();
 
-router.get('/:id', (req, res) => {
+router.put('/:id/complete', (req, res) => {
   try {
     const id = req.params.id;
-    const stmt = db.prepare('SELECT * FROM OrderTable WHERE id = ?');
-    const order = stmt.get(id);
+    console.log(id);
+    const stmt = db.prepare('UPDATE OrderTable SET status = ?, order_completed_date = CURRENT_TIMESTAMP WHERE id = ?');
+    const result = stmt.run('COMPLETED', id);
 
-    if (!order) return res.status(404).json({ error: 'Order not found.' });
-    res.status(200).json(order);
+    if (result.changes === 0) return res.status(404).json({ error: 'Order not found.' });
+    res.status(200).json({ message: 'Order marked as completed.' });
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch order with that id.' });
+    res.status(500).json({ error: 'Failed to complete order.' });
   }
 });
+
+router.route('/:id')
+  .get((req, res) => {
+    try {
+      const id = req.params.id;
+      const stmt = db.prepare('SELECT * FROM OrderTable WHERE id = ?');
+      const order = stmt.get(id);
+
+      if (!order) return res.status(404).json({ error: 'Order not found.' });
+      res.status(200).json(order);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to fetch order with that id.' });
+    }
+  })
+  .delete((req, res) => {
+    try {
+      const id = req.params.id;
+      const stmt = db.prepare('DELETE FROM OrderTable WHERE id = ?');
+      const result = stmt.run(id);
+      
+      if (result.changes === 0) return res.status(404).json({ error: 'Order not found.' });
+      res.status(200).json({ message: 'Order deleted successfully.' });
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to delete order.' });
+    }
+  });
 
 router.route('/')
   .get((req, res) => {

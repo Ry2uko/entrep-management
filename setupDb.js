@@ -54,7 +54,7 @@ menus.forEach(menu => {
 const menuItems = [
   { name: 'Inasal Bites w/ Java Rice', price: 73, menu_name: 'Meals' },
   { name: 'Pork Sisig w/ Java Rice', price: 89, menu_name: 'Meals' },
-  { name: 'Graham de Letching', price: 25, menu_name: 'Dessert' },
+  { name: 'Graham de Letchin', price: 25, menu_name: 'Dessert' },
   { name: 'Pineapple Juice', price: 15, menu_name: 'Drinks (16oz)' },
   { name: 'Iced Tea', price: 15, menu_name: 'Drinks (16oz)' },
   { name: 'Inasal Bites w/ Java Rice, Sinigang Soup, Chicken Oil & Drinks', price: 83, menu_name: 'Combo Meals' },
@@ -62,6 +62,7 @@ const menuItems = [
   { name: 'Java Rice', price: 20, menu_name: 'Add-ons' },
   { name: 'Chicken Oil', price: 10, menu_name: 'Add-ons' },
   { name: 'Sinigang Soup', price: 10, menu_name: 'Add-ons' },
+  { name: 'Inasal Sticks', price: 25, menu_name: 'Add-ons' },
 ];
 
 menuItems.forEach(item => {
