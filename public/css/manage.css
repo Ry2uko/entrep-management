@@ -74,6 +74,44 @@ a {
   max-width: 360px;
 }
 
+.search-bar-container {
+  margin-bottom: 2rem;
+}
+.search-bar-container .search-bar {
+  max-width: 600px;
+  margin: auto auto;
+}
+.search-bar-container .row {
+  border-radius: 0.4rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #fff;
+}
+.search-bar-container .search-bar #search-order {
+  border: none;
+  padding: 7px 0;
+  width: 100%;
+  background-color: #fff;
+  font-family: "Red Hat Display", serif;
+  font-size: 1.4rem;
+}
+.search-bar-container .search-bar #search-order:focus-visible {
+  outline: none;
+}
+.search-bar-container .search-bar .search-icon {
+  border: none;
+  padding: 7px 5px;
+  font-size: 1.1rem;
+}
+
+.orders-container {
+  margin-bottom: 2rem;
+}
+.orders-container h3 {
+  margin-bottom: 1rem;
+  font-family: "Red Hat Display", serif;
+  font-size: 1.8rem;
+}
+
 .loader {
   width: 35px;
   height: 80px;

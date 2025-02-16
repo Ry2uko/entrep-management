@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pop n' Grill Manager | Menu</title>
+        <title>Pop n' Grill Manager | Manage Orders</title>
         <link rel="icon" type="image/x-icon" href="/public/img/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,16 +52,26 @@
                     <img src="/public/img/manage-orders-title.png" alt="page-title" 
                     class="page-title d-block mx-auto" />
                 </div>
-                <div class="search-bar-container">
+                <div class="search-bar-container container-md">
                     <div class="search-bar">
-                        <div class="input-group">
-                            <span class="search-icon">
-                                <i class="fa-solid fa-search"></i>
-                            </span>
-                            <input type="text" id="search-order" class="form-control"
-                            placeholder="Search Order" />
+                        <div class="row">
+                            <div class="col-auto d-flex align-items-center justify-content-center">
+                                <span class="search-icon">
+                                    <i class="fa-solid fa-search"></i>
+                                </span>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="search-order" placeholder="Search Order (Name or Order Id)" />
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="pending-orders-container container-md orders-container"> 
+                    <h3>Pending</h3>
+                    <div class="orders-container container-fluid"></div>
+                </div>
+                <div class="completed-orders-container container-md orders-container">
+                    <h3>Completed</h3>
                 </div>
             </main>
         </div>
