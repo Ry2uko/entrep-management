@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pop n' Grill Manager | Menu</title>
+        <link rel="icon" type="image/x-icon" href="/public/img/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="/public/css/manage.css" type="text/css" />
+
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script defer src="https://kit.fontawesome.com/b40850cb13.js" crossorigin="anonymous"></script>
+        <script defer type="text/javascript" src="/public/js/manage.js"></script>
+    </head>
+    <body>
+        <div class="parent-container container-fluid">
+            <header class="header container-fluid d-flex p-2">
+                <h1 class="navbar-logo">
+                    <a href="/"><img src="/public/img/Logo.png" alt="logo" class="logo h-100" /></a>
+                </h1>
+                <nav class="ms-auto flex-1 d-flex align-items-start justify-content-end
+                navbar navbar-expand-lg" >
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <div class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/menu" class="nav-link">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/order" class="nav-link">Order</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/manage" class="nav-link active">Manage</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/stats" class="nav-link">Stats</a>
+                            </li>   
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="loader mx-auto mt-5"></div>
+            <main class="container-fluid">
+                <div class="container-fluid title-container mb-5"> 
+                    <img src="/public/img/manage-orders-title.png" alt="page-title" 
+                    class="page-title d-block mx-auto" />
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <div class="input-group">
+                            <span class="search-icon">
+                                <i class="fa-solid fa-search"></i>
+                            </span>
+                            <input type="text" id="search-order" class="form-control"
+                            placeholder="Search Order" />
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

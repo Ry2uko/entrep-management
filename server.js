@@ -26,11 +26,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/order', (req, res) => {
-
+  res.sendFile(path.join(__dirname, 'views/order.html'));
 });
 
 app.get('/manage', (req, res) => {
-
+  res.sendFile(path.join(__dirname, 'views/manage.html'));
 });
 
 app.get('/menu', (req, res) => {
@@ -52,10 +52,3 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });
-
-/* TODO CHECKLIST */
-// ALL WILL RETURN AN ARRAY except for _id parameters
-// TODO: GET and POST - /orders
-  // TODO: /orders?menu_id=<ID>
-  // TODO: /orders?id=<ID>
-// TODO: GET - /menu

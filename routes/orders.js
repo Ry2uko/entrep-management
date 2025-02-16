@@ -24,11 +24,40 @@ router.route('/')
     }
   })
   .post(validateData, (req, res) => {
-    res.status(201).send('Created!');
+    try {
+      const { customer_name, items, total_cost } = req.body;
+
+      const orderStmt = db.prepare('INSERT INTO OrderTable (customer_name, total_price) VALUES (?, ?)');
+      const result = orderStmt.run(customer_name, total_cost);
+      const orderId = result.lastInsertRowid;
+
+      const orderItemStmt = db.prepare('INSERT INTO OrderItem (quantity, price, subtotal, order_id, menu_item_id) VALUES (?, ?, ?, ?, ?)');
+
+      items.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        orderItemStmt.run(item.quantity, item.price, subtotal, orderId, item.id);
+      });
+
+      res.status(201).json({ message: 'Order created successfully!' });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to create order.' });
+    }
   });
 
 function validateData(req, res, next) {
+  const { customer_name, items } = req.body;
+  
+  if (!customer_name || !items || !Array.isArray(items) || items.length === 0) {
+    return res.status(400).json({ error: 'Invalid request data.' });
+  }
 
+  const invalidItem = items.find(item => !item.id || !item.price || !item.quantity);
+  if (invalidItem) {
+      return res.status(400).json({ error: 'Invalid item data.' });
+  }
+
+  next();
 }
 
 module.exports = router
